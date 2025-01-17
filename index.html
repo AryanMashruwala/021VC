@@ -340,29 +340,55 @@
     </style>
     <!--New Application-Video Window Styling-->
     <style>
-        .application-video-window-container {
+        .promo-applications-window-container {
             display: flex;
             flex-direction: row;
+            justify-content: center;
+            height: 400px;
         }
 
-        .application-window {
+        .promo-window {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            width: 35%;
-            height: 300px;
-            margin-top: 2.5%;
-            margin-left: 9%;
-            margin-right: 6%;
+            align-items: center;
+            width: 45%;
+            height: 100%;
             border: solid;
             border-width: 2px;
             border-radius: 5%;
         }
 
-        .application-window-text {
+        .applications-window-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            gap: 10px;
+        }
+
+        .application-window {
+            display: flex;
+            flex-direction: column;
+            border: solid;
+            border-width: 2px;
+            border-radius: 5%;
+            width: 95%;
+        }
+
+        .promo-window-text {
+            font-size: 250%;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .application-window-text, .promo-window-subtext {
             font-size: 200%;
             text-align: center;
-            margin-bottom: 5%;
+            margin-top: 20px;
+            margin-left: 35px;
+            margin-right: 35px;
         }
 
         .application-window-button-container {
@@ -379,40 +405,10 @@
             border: transparent;
             border-radius: 30px;
             min-width: 20%;
+            margin-bottom: 20px;
         }
 
-        .video-window {
-            width: 50%;
-            position: relative;
-        }
-
-        .zvc-intro-video {
-            border: transparent;
-            border-radius: 5%;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: auto;
-            translate: -5% 10%;
-        }
-
-        .mute-button {
-            background-color: white;
-            width: 30px;
-            height: 30px;
-            border: transparent;
-            border-radius: 50%;
-            position: absolute;
-            top: 13%;
-            left: -3%;
-        }
-
-        .mute-button-img {
-            width: 100%;
-            object-fit: cover;
-            padding: 5%;
-        }
-
-        .application-video-window-graphic-container {
+        /* .application-video-window-graphic-container {
             display: flex;
             justify-content: center;
             width: 50%;
@@ -426,7 +422,7 @@
             margin-top: auto;
             object-fit: cover;
             filter: brightness(5);
-        }
+        } */
     </style>
     <!-- News Scroller Styles -->
     <style>
@@ -650,32 +646,43 @@
             <section class="section no-top-spacing no-bottom-spacing"
                      style="display: flex;
                             flex-direction: column;">
-                <div class="application-video-window-container">
-                    <div class="application-window">
-                        <p class="application-window-text">
-                            Fall 2024 Applications Open
+                <div class="promo-applications-window-container">
+                    <div class="promo-window">
+                        <p class="promo-window-text">
+                            Join this semester's accelerator!
                         </p>
-                        <div class="application-window-button-container">
-                            <button class="application-window-button" onclick="window.open('https://forms.gle/3TTJpGFTTdARdr616', '_blank').focus()">Apply</button>
-                            <button class="application-window-button" onclick="document.getElementById('learn-more').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+                        <p class="promo-window-subtext">
+                            Do you have an AI start-up idea? Zero2One can help turn those ideas into reality.
+                        </p>
+                        </div>
+                    <div class="applications-window-container">
+                        <div class="application-window">
+                            <p class="application-window-text">
+                                Accelerator Applications Open
+                            </p>
+                            <div class="application-window-button-container">
+                                <button class="application-window-button" onclick="window.open('https://forms.gle/3TTJpGFTTdARdr616', '_blank').focus()">Apply</button>
+                                <button class="application-window-button" onclick="document.getElementById('learn-more').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+                            </div>
+                        </div>
+                        <div class="application-window">
+                            <p class="application-window-text">
+                                Spring 2025 Applications Open
+                            </p>
+                            <div class="application-window-button-container">
+                                <button class="application-window-button" onclick="window.open('https://forms.gle/3TTJpGFTTdARdr616', '_blank').focus()">Apply</button>
+                                <button class="application-window-button" onclick="document.getElementById('learn-more').scrollIntoView({behavior: 'smooth'})">Learn More</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="video-window">
-                        <video class="zvc-intro-video" id="69af6757-33bb-20b6-9c2d-83753451b196-video"
-                                src="hero_video.mp4" width="90%" height="100%" autoplay loop muted>
-                        </video>
-                        <button class="mute-button" id="mute-button">
-                            <img class="mute-button-img" id="mute-button-img" src="Mute_Icon.svg">
-                        </button>
-                    </div>
                 </div>
-                <div class="application-video-window-container">
+                <!-- <div class="application-video-window-container">
                     <div class="application-video-window-graphic-container">
                         <img class="application-video-window-graphic" src="learn_build_launch.png">
                     </div>
                     <div class="empty-application-video-window-container">
                     </div>
-                </div>
+                </div> -->
             </section>
 
             <section class="section no-top-spacing no-bottom-spacing">
@@ -901,20 +908,6 @@
 
 
     </main>
-    <!--Mute Button Script-->
-    <script>
-        let video = document.getElementById("69af6757-33bb-20b6-9c2d-83753451b196-video");
-        let muteButton = document.getElementById("mute-button");
-        let muteButtonImg = document.getElementById("mute-button-img");
-        muteButton.onclick = function () { 
-            if (video.muted) {
-                muteButtonImg.src = "Speaker_Icon.svg"; 
-            } else {
-                muteButtonImg.src = "Mute_Icon.svg";
-            }
-            video.muted = !video.muted;
-        }
-    </script>
     <!--UIUC FA24 Partnerships Circular Layout Script-->
     <script>
         const imgs = ['ec_logo.png', 'iventure_logo.jfif', 'scd_logo.jfif', 'tec_logo.png', 'founders_logo.png', 'entrecorps_logo.jfif'];
@@ -1050,8 +1043,7 @@ summary {
 
 audio,
 canvas,
-progress,
-video {
+progress {
     vertical-align: baseline;
     display: inline-block
 }
@@ -1061,9 +1053,6 @@ audio:not([controls]) {
     display: none
 }
 
-.w-background-video--control>[hidden] {
-    display: none !important
-}
 
 .w-slider {
     height: 300px;
