@@ -475,6 +475,62 @@
             padding-right: 50px;
         }
     </style>
+    <!--ChatBot Promo Styles-->
+    <style>
+        .chatbot-promo-div {
+            display: flex;
+            flex-direction: row;
+            height: 150px;
+            align-items: center;
+        }
+
+        .uiuc-chat-bot-img {
+            border-radius: 45px;
+            width: 500px;
+            height: 100px;
+            object-fit: cover;
+            margin-left: 3%;
+            margin-right: 3%;
+        }
+
+        .zvc-logo {
+            height: 100px;
+            object-fit: cover;
+            margin-left: 3%; 
+            margin-right: 3%;
+        }
+
+        .chatbot-text {
+            font-size: 30px;
+            width: 50%;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .chatbot-img-link-div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .chatbot-img-div {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .chatbot-button {
+            padding-top: 1.5%;
+            padding-bottom: 1.5%;
+            padding-left: 2%;
+            padding-right: 2%;
+            margin-top: 10%;
+            background-color: #5CE1E6;
+            color: white;
+            border: transparent;
+            border-radius: 30px;
+            width: 100px;
+        }
+    </style>
 </head>
 
 <body class="body">
@@ -674,6 +730,22 @@
                         <img class="application-video-window-graphic" src="learn_build_launch.png">
                     </div>
                     <div class="empty-application-video-window-container">
+                    </div>
+                </div>
+            </section>
+
+            <!--UIUC.chat x Zero2One Chatbot Promo-->
+            <section class="section"> 
+                <div class="chatbot-promo-div">
+                    <div class="chatbot-text">
+                        Introducing Founder Bot, an AI guide through all things entrepreneurship at UIUC. Made by Zero2One and NCSA researchers. 
+                    </div>
+                    <div class="chatbot-img-link-div">
+                        <div class="chatbot-img-div">
+                            <img class="uiuc-chat-bot-img" src="partnership_logos/uiucchat-purple.png">
+                            <img class="zvc-logo" src="vc.png">
+                        </div>
+                        <button class="chatbot-button" onclick="window.open('https://uiuc.chat/zero2one-founder-bot/chat', '_blank').focus()">Click Here</button>
                     </div>
                 </div>
             </section>
